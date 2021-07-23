@@ -1,0 +1,36 @@
+<div fxLayout="column">
+    <div fxLayout="column" fxFlex="30">
+        <div fxLayoutAlign="center center" >
+            <h1>EPISODIO -- {{unEpisodio.name}}</h1>
+        </div>
+        <div fxLayoutAlign="center center" >
+            <mat-card class="bordesBlog carta1" fxFlex fxLayout="column">
+                <mat-card-header fxFlex="40">
+                    <mat-card-title><p>Nombre Episodio:{{unEpisodio.name}}</p></mat-card-title>
+                </mat-card-header> 
+                <mat-card-content fxFlex="15">
+                    <p>Fecha: {{unEpisodio.air_date}}</p>
+                </mat-card-content>
+                <mat-card-content fxFlex="15">
+                    <p>Episodio N°: {{unEpisodio.episode}}</p>
+                </mat-card-content>
+                <mat-card-content fxFlex="15">
+                    <p>Creado: {{unEpisodio.created}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div fxLayout="row wrap" fxflex="70" fxLayoutAlign="space-evenly center" >
+            <div *ngFor="let item of Personajes">
+                <mat-card class="example-card bordesBlog" fxFlex="" fxLayout="column">
+                    <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class="ubicacionIMG" fxFlex="60">
+                    <mat-card-header fxFlex="25">
+                        <mat-card-title><p>{{item.name}}</p></mat-card-title>
+                    </mat-card-header>        
+                    <mat-card-actions fxFlex="15">
+                        <button mat-raised-button color="primary" routerLink="/personaje/{{item.id}}">Ver Personaje</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+    </div>
+</div>

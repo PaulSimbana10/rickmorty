@@ -1,0 +1,59 @@
+<!-- <div>
+    <h2 class="text-center text-purple-700 text-opacity-75 text-4xl font-serif my-8">Lista de Personajes</h2>
+    <ul class="flex flex-wrap ">
+        <li *ngFor="let item of characters" class=" m-10  shadow-2xl">
+            <app-card [items]="item"></app-card>
+        </li>
+    </ul>
+</div> -->
+<div fxLayout="column">
+    <div fxflex="20" class="favoritos" fxLayoutAlign="end end">
+        <button mat-stroked-button color="warn" [matMenuTriggerFor]="menu">
+            <mat-icon matBadge="{{cont}}" matBadgeColor="warn">favorite</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <div *ngFor="let list of lista"  fxLayout="row" fxLayoutAlign="space-around center">
+                <div mat-menu-item class="menuiz" routerLink="/personaje/{{list.id}}"> {{list.name}}</div>
+                <div class="menuder">
+                    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="eliminar(list.id)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                </div>
+            </div>
+        </mat-menu>
+    </div>
+    <div class="cuerpo" fxLayout="row wrap" fxFlex fxLayoutAlign="space-evenly center" fxflex="80">
+        <div *ngFor="let item of characters" fxflex>
+            <mat-card class="example-card bordesBlog" fxFlex="" fxLayout="column">
+                <img mat-card-image src="{{item.image}}" alt="Photo of a Shiba Inu" class="ubicacionIMG" fxFlex>
+                <mat-card-header fxFlex="10">
+                    <mat-card-title>
+                        <p>Nombre: {{item.name}}</p>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content fxFlex="5">
+                    <p>Especie: {{item.species}}</p>
+                </mat-card-content>
+                <mat-card-content fxFlex="5">
+                    <p>Tipo: {{ item.type }}</p>
+                </mat-card-content>
+                <mat-card-content fxFlex="5">
+                    <p>Genero: {{ item.gender }}</p>
+                </mat-card-content>
+                <mat-card-content fxFlex="5">
+                    <p>Nombre_Origen: {{ item.origin.name }}</p>
+                </mat-card-content>
+                <mat-card-content fxFlex="5">
+                    <p>Localizacion: {{ item.location.name }}</p>
+                </mat-card-content>
+                <mat-card-actions fxFlex="15">
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <button mat-raised-button color="primary" routerLink="/personaje/{{item.id}}">Ver
+                            Personaje</button>
+                        
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="cuerpo" fxLayout="row wrap" fxFlex fxLayoutAlign="space-evenly center">
+    <div *ngFor="let item of episodios">
+        <mat-card class="example-card bordesBlog" fxFlex="" fxLayout="column">
+            <mat-card-header fxFlex="40">
+                <mat-card-title><p>Nombre Episodio:{{item.name}}</p></mat-card-title>
+            </mat-card-header> 
+            <mat-card-content fxFlex="15">
+                <p>Fecha: {{item.air_date}}</p>
+            </mat-card-content>
+            <mat-card-content fxFlex="15">
+                <p>Episodio N°: {{item.episode}}</p>
+            </mat-card-content>
+            <mat-card-content fxFlex="15">
+                <p>Creado: {{item.created}}</p>
+            </mat-card-content>       
+            <mat-card-actions fxFlex="15">
+                <button mat-raised-button color="primary" routerLink="/episode/{{item.id}}">Ver episodio</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

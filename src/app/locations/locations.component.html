@@ -1,0 +1,21 @@
+<div class="cuerpo" fxLayout="row wrap" fxFlex fxLayoutAlign="space-evenly center">
+    <div *ngFor="let item of localizacion">
+        <mat-card class="example-card bordesBlog" fxFlex="" fxLayout="column">
+            <mat-card-header fxFlex="40">
+                <mat-card-title><p>Nombre del planeta:{{item.name}}</p></mat-card-title>
+            </mat-card-header> 
+            <mat-card-content fxFlex="10">
+                <p>Tipo: {{item.type}}</p>
+            </mat-card-content>
+            <mat-card-content fxFlex="10">
+                <p>Dimension: {{item.dimension}}</p>
+            </mat-card-content>
+            <mat-card-content fxFlex="10">
+                <p>Creado: {{item.created}}</p>
+            </mat-card-content>       
+            <mat-card-actions fxFlex="30">
+                <button mat-raised-button color="primary" routerLink="/location/{{item.id}}">Ver mas</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div fxLayout="column" fxflex>
+    <div fxLayout="column" fxFlex>
+        <div fxLayoutAlign="center center">
+            <h1>PERSONAJE -- {{character.name}}</h1>
+        </div>
+        <div fxLayoutAlign="center center">
+            <mat-card class="bordesBlog example-card" fxFlex fxLayout="column">
+                <img mat-card-image src="{{character.image}}" alt="Photo of a Shiba Inu" class="ubicacionIMG"
+                    fxFlex>
+                <mat-card-content fxFlex="5">
+                    <p>Estado: {{character.status}}</p>
+                </mat-card-content>
+
+                <mat-card-content fxFlex="5">
+                    <p>Especie: {{character.species}}</p>
+                </mat-card-content>
+
+                <mat-card-content fxFlex="5">
+                    <p>Tipo: {{character.type}}</p>
+                </mat-card-content>
+
+                <mat-card-content fxFlex="5">
+                    <p>Genero: {{character.gender}}</p>
+                </mat-card-content>
+
+                <mat-card-content fxFlex="5">
+                    <p>Fecha de creacion: {{character.created}}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+   <div fxLayout="row wrap" fxflex="70" fxLayoutAlign="space-evenly center" >
+            <div *ngFor="let item of Episodios">
+                <mat-card class="card2 bordesBlog" fxFlex="" fxLayout="column">
+                    <mat-card-header fxFlex="40">
+                        <mat-card-title><p>Nombre Episodio:{{item.name}}</p></mat-card-title>
+                    </mat-card-header> 
+                    <mat-card-content fxFlex="15">
+                        <p>Fecha: {{item.air_date}}</p>
+                    </mat-card-content>
+                    <mat-card-content fxFlex="15">
+                        <p>Episodio N°: {{item.episode}}</p>
+                    </mat-card-content>
+                    <mat-card-content fxFlex="15">
+                        <p>Creado: {{item.created}}</p>
+                    </mat-card-content>
+                    <mat-card-actions fxFlex="15">
+                        <button mat-raised-button color="primary" routerLink="/episode/{{item.id}}">Ver Episodio</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+    </div> 
+</div>
